@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Responsive Personal Portfolio Website Using HTML CSS & JavaScript | Codehal</title>
+    <!-- boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- header -->
+    <header class="active">
+        <a href="#" class="logo">CUSIG.</a>
+
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav>
+            <a href="#" class="active">Inicio</a>
+            <a href="#">Servicios</a>
+            <a href="#">Resumen</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- bars background -->
+    <div class="bars-box active">
+        <div class="bar" style="--i:6;"></div>
+        <div class="bar" style="--i:5;"></div>
+        <div class="bar" style="--i:4;"></div>
+        <div class="bar" style="--i:3;"></div>
+        <div class="bar" style="--i:2;"></div>
+        <div class="bar" style="--i:1;"></div>
+    </div>
+
+    <!-- home section -->
+    <section class="home active">
+        <div class="home-detail">
+            <h1>CUSIG S A S</h1>
+            <h2>Somos
+                <span style="--i:4;" data-text="GeoDesarrolladores">GeoDesarrolladores</span>
+                <span style="--i:3;" data-text="Ingenieros SIG">Ingenieros SIG</span>
+                <span style="--i:2;" data-text="Especialistas en Geoinformática">Especialistas en Geoinformática</span>
+                <span style="--i:1;" data-text="Creadores de Soluciones Geoespaciales">Creadores de Soluciones Geoespaciales</span>
+            </h2>
+            <p>Mapeamos el futuro de tu empresa 🚀 | Transformamos datos en mapas inteligentes 🌐 | Creamos mapas que cuentan historias 📍 | Soluciones en Sistemas de Información Geográfica 📊.</p>
+            <div class="btn-sci">
+                <a href="#" class="btn">Download CV</a>
+                <div class="sci">
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-youtube'></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-img">
+            <div class="img-box">
+                <div class="img-item">
+                    <img src="images/home.png">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- services section -->
+    <section class="services">
+        <h2 class="heading">Nuestros <span>Servicios</span></h2>
+        <div class="services-container">
+            <div class="services-box">
+                <div class="icon">
+                    <i class='bx bx-code-alt'></i>
+                    <a href="#"><i class='bx bx-arrow-back'></i></a>
+                </div>
+                <h3>Desarrollo de Geovisores Personalizados</h3>
+                <p>Aplicaciones web o móviles que permiten visualizar datos geográficos de manera interactiva, mapas interactivos para visualizar la distribución de puntos de interés, análisis de patrones espaciales, visualización de datos en 3D, etc.
+                </p>
+            </div>
+
+            <div class="services-box">
+                <div class="icon">
+                    <i class='bx bxs-devices'></i>
+                    <a href="#"><i class='bx bx-arrow-back'></i></a>
+                </div>
+                <h3>Desarrollo de Aplicaciones Móviles Geolocalizadas</h3>
+                <p> Creación de aplicaciones móviles que aprovechan la ubicación del usuario para ofrecer servicios y funcionalidades específicas, navegación GPS, geolocalización de servicios cercanos, captura de datos en campo, etc.</p>
+            </div>
+
+            <div class="services-box">
+                <div class="icon">
+                    <i class='bx bx-data'></i>
+                    <a href="#"><i class='bx bx-arrow-back'></i></a>
+                </div>
+                <h3>Desarrollo de Bases de Datos Geográficas</h3>
+                <p>Creación de esquemas de datos eficientes para almacenar información geográfica de manera organizada y accesible, carga y transformación de datos de diversas fuentes (vectoriales, raster, texto, etc.) en formatos compatibles con los SIG, gestión y mantenimiento de bases de datos: Implementación de procedimientos para garantizar la integridad, consistencia y actualización de los datos geográficos y desarrollo de índices espaciales y consultas eficientes para mejorar el rendimiento de las aplicaciones.</p>
+            </div>
+
+            <div class="services-box">
+                <div class="icon">
+                    <i class='bx bx-trending-up'></i>
+                    <a href="#"><i class='bx bx-arrow-back'></i></a>
+                </div>
+                <h3>Dashboards</h3>
+                <p>Paneles de control que presentan de forma visual y concisa indicadores clave de rendimiento (KPIs) relacionados con datos geográficos, monitoreo de eventos en tiempo real, análisis de tendencias, comparación de datos a lo largo del tiempo, etc.</p>
+            </div>
+
+            <div class="services-box">
+                <div class="icon">
+                    <i class='bx bx-analyse'></i>
+                    <a href="#"><i class='bx bx-arrow-back'></i></a>
+                </div>
+                <h3>Análisis Espacial</h3>
+                <p>Aplicación de técnicas estadísticas y geográficas para extraer información significativa de los datos espaciales, análisis de patrones espaciales, modelado de fenómenos, predicción de eventos, etc.</p>
+            </div>
+
+            <div class="services-box">
+                <div class="icon">
+                    <i class='bx bx-group'></i>
+                    <a href="#"><i class='bx bx-arrow-back'></i></a>
+                </div>
+                <h3>Consultoría y Asesoramiento en SIG</h3>
+                <p>Brindar orientación y soporte técnico a organizaciones que desean implementar soluciones SIG, diseño de arquitectura de sistemas, selección de tecnologías, capacitación de usuarios, etc.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- resume section -->
+    <section class="resume">
+        <div class="resume-container">
+            <div class="resume-box">
+                <h2>¿Por qué contratarnos?</h2>
+                <p class="desc">Porque contamos con un equipo altamente cualificado con años de experiencia en el desarrollo de soluciones geoespaciales a medida. Utilizamos las últimas tecnologías y metodologías para garantizar resultados óptimos. Además, te ofrecemos un servicio personalizado y un acompañamiento durante todo el proceso, desde la concepción del proyecto hasta su implementación. ¡Descubre cómo podemos ayudarte a convertir tus datos geográficos en información valiosa para tu negocio!.</p>
+                <button class="resume-btn active">Educacion</button>
+                <button class="resume-btn">Habilidades</button>
+                <button class="resume-btn">Sobre Nosotros</button>
+            </div>
+
+            <div class="resume-box">
+
+                <div class="resume-detail education active">
+                    <h2 class="heading">Nuestra <span>Educacion</span></h2>
+                    <p class="desc">Acreditacion en alta calidad.</p>
+                    <div class="resume-list">
+                        <div class="resume-item">
+                            <p class="year">2024</p>
+                            <h3>Ingenieros Topograficos</h3>
+                            <p class="company">Universidad del Valle</p>
+                            <p>Poseen una sólida formación en geomensura, manejo de software SIG y programación, su capacidad para comprender y trabajar con datos espaciales, combinada con habilidades analíticas y de desarrollo de software, los convierte en profesionales altamente capacitados para crear soluciones innovadoras en el sector.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resume-detail skills">
+                    <h2 class="heading">Nuestras <span>Habilidades</span></h2>
+                    <p class="desc">Un desarrollador de SIG requiere una combinación de habilidades técnicas y geográficas. Debe dominar lenguajes de programación como Python, JavaScript, y tecnologías web como HTML, CSS y frameworks como React o Angular para crear interfaces de usuario interactivas. .</p>
+                    <div class="resume-list">
+                        <div class="resume-item">
+                            <i class='bx bxl-html5'></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-php'></i>
+                            <span>PHP</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-css3'></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-javascript'></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-react'></i>
+                            <span>React.js</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-vuejs'></i>
+                            <span>Vue.js</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-tailwind-css'></i>
+                            <span>Tailwind CSS</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-nodejs'></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-flutter'></i>
+                            <span>Flutter</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-android'></i>
+                            <span>Android</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-apple'></i>
+                            <span>Apple</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-tux'></i>
+                            <span>Linux</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-mongodb'></i>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-postgresql'></i>
+                            <span>PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resume-detail about">
+                    <h2 class="heading">Sobre <span>Nosotros</span></h2>
+                    <p class="desc">Información basica.</p>
+                    <div class="resume-list">
+                        <div class="resume-item">
+                            <p>Nombre <span>CUSIG S A S</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>Pais <span>Colombia</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>Ciudad <span>Santiago de Cali</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>Experiencia <span>2+ Años</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>Tiempo <span>Disponible</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>Telefono <span>(+57) 311 4701386</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>Email <span>info@cusig.co</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>Idiomas <span>Español, Ingles</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- portfolio section -->
+    <section class="portfolio">
+        <h2 class="heading">Ultimos <span>Proyectos</span></h2>
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <div class="portfolio-detail active">
+                    <p class="numb">01</p>
+                    <h3>Aplicacion de Servicios bajo demanda</h3>
+                    <p>MUS, una aplicacion pensada para que usuarios conecten con proveedores de servicio en la ciudad de Cali</p>
+                    <div class="tech">
+                        <p>Flutter, Php, Node.js, MariaDB</p>
+                    </div>
+                    <div class="live-github">
+                        <a href="https://play.google.com/store/apps/details?id=com.musapp.user&hl=es_CO"><i class='bx bx-arrow-back'></i><span>Live Project</span></a>
+                    </div>
+                </div>
+
+                <div class="portfolio-detail">
+                    <p class="numb">02</p>
+                    <h3>Geovisor de Huecos reparados en la malla vial</h3>
+                    <p>Geovisor interactivo que permite la visualización de los baches reparados por la labor social realizada por Samuel Merchan en Santiago de Cali</p>
+                    <div class="tech">
+                        <p>HTML, CSS, JavaScript</p>
+                    </div>
+                    <div class="live-github">
+                        <a href="https://samuelmerchan.cusig.co/"><i class='bx bx-arrow-back'></i><span>Live Project</span></a>
+                    </div>
+                </div>
+
+                <div class="portfolio-detail">
+                    <p class="numb">03</p>
+                    <h3>Frontend Project</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit asperiores natus rerum saepe. Eum modi assumenda quaerat temporibus.</p>
+                    <div class="tech">
+                        <p>React.js, Tailwind CSS</p>
+                    </div>
+                    <div class="live-github">
+                        <a href="#"><i class='bx bx-arrow-back'></i><span>Live Project</span></a>
+                        <a href="#"><i class='bx bxl-github'></i><span>Github Repository</span></a>
+                    </div>
+                </div>
+
+                <div class="portfolio-detail">
+                    <p class="numb">04</p>
+                    <h3>Full Stack Project</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit asperiores natus rerum saepe. Eum modi assumenda quaerat temporibus.</p>
+                    <div class="tech">
+                        <p>MongoDB, Express.js, AngularJS, Node.js</p>
+                    </div>
+                    <div class="live-github">
+                        <a href="#"><i class='bx bx-arrow-back'></i><span>Live Project</span></a>
+                        <a href="#"><i class='bx bxl-github'></i><span>Github Repository</span></a>
+                    </div>
+                </div>
+
+                <div class="portfolio-detail">
+                    <p class="numb">05</p>
+                    <h3>Frontend Project</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit asperiores natus rerum saepe. Eum modi assumenda quaerat temporibus.</p>
+                    <div class="tech">
+                        <p>Vue.js, Tailwind CSS</p>
+                    </div>
+                    <div class="live-github">
+                        <a href="#"><i class='bx bx-arrow-back'></i><span>Live Project</span></a>
+                        <a href="#"><i class='bx bxl-github'></i><span>Github Repository</span></a>
+                    </div>
+                </div>
+
+                <div class="portfolio-detail">
+                    <p class="numb">06</p>
+                    <h3>Full Stack Project</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit asperiores natus rerum saepe. Eum modi assumenda quaerat temporibus.</p>
+                    <div class="tech">
+                        <p>MongoDB, Express.js, Vue.js, Node.js</p>
+                    </div>
+                    <div class="live-github">
+                        <a href="#"><i class='bx bx-arrow-back'></i><span>Live Project</span></a>
+                        <a href="#"><i class='bx bxl-github'></i><span>Github Repository</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <div class="portfolio-carousel">
+                    <div class="img-slide">
+                        <div class="img-item">
+                            <img src="images/portfolio1.jpg">
+                        </div>
+                        <div class="img-item">
+                            <img src="images/portfolio2.jpg">
+                        </div>
+                        <div class="img-item">
+                            <img src="images/portfolio3.jpg">
+                        </div>
+                        <div class="img-item">
+                            <img src="images/portfolio4.jpg">
+                        </div>
+                        <div class="img-item">
+                            <img src="images/portfolio5.jpg">
+                        </div>
+                        <div class="img-item">
+                            <img src="images/portfolio6.jpg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navigation">
+                    <button class="arrow-left disabled"><i class='bx bx-chevron-left'></i></button>
+                    <button class="arrow-right"><i class='bx bx-chevron-right'></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section -->
+    <section class="contact">
+        <div class="contact-container">
+            <div class="contact-box">
+                <h2>Vamos a trabajar juntos</h2>
+                <p class="desc">Deja tus dudas e inquietudes y te responderemos.</p>
+                <div class="contact-detail">
+                    <i class='bx bxs-phone'></i>
+                    <div class="detail">
+                        <p>Telefono</p>
+                        <p>(+57) 311 4701386</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <i class='bx bxs-envelope'></i>
+                    <div class="detail">
+                        <p>Email</p>
+                        <p>info@cusig.co</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <i class='bx bxs-map'></i>
+                    <div class="detail">
+                        <p>Ubicación</p>
+                        <p>Santiago de Cali</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-box">
+                <form action="">
+                    <h2 class="heading">Haz <span>Contacto!</span></h2>
+                    <div class="field-box">
+                        <input type="text" placeholder="Nombre Completo" required>
+                        <input type="email" placeholder="Email" required>
+                        <input type="text" placeholder="Numero de Telefono" required>
+                        <input type="text" placeholder="Asunto" required>
+                        <textarea name="" id="" placeholder="Tu mensaje" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- custom js -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
