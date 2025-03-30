@@ -1,73 +1,328 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" type="x-icon" href="../images/fondo azul oscuro-09.png">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="shortcut icon"
+    type="image/x-icon"
+    href="../images/fondo azul oscuro-09.png"
+  />
   <title>MUS</title>
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-PRNKS9CX');</script>
-  <!-- End Google Tag Manager -->
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E00YY39N4R"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-E00YY39N4R');
-  </script>
-  <!-- Meta Pixel Code -->
-  <script>
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-      };
-      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1147954713480347');
-    fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1147954713480347&ev=PageView&noscript=1" /></noscript>
-  <!-- End Meta Pixel Code -->
-  <!-- boxicons -->
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <!-- custom css -->
-  <link rel="stylesheet" href="../css/style.css">
+  <!-- Boxicons -->
+  <link
+    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+  <!-- Estilos globales -->
+  <style>
+    /* ================= RESET Y ESTILOS BASE ================= */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    font-size: 16px;
+    background-color: #1f242d;
+    color: #fff;
+    overflow-x: hidden; /* Evita scroll horizontal */
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* ================= ENCABEZADO ================= */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: #1f242d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+  }
+
+  header.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+  }
+
+  nav a {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-left: 3rem;
+    color: #fff;
+    transition: 0.3s;
+  }
+
+  nav a:hover,
+  nav a.active {
+    color: #05a3ce;
+  }
+
+  /* Ícono para menú móvil */
+  #menu-icon {
+    font-size: 3rem;
+    display: none;
+    cursor: pointer;
+  }
+
+  /* ================= BARRAS DE ANIMACIÓN INICIAL ================= */
+  .bars-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1f242d;
+    z-index: 9999;
+    display: flex;
+  }
+
+  .bar {
+    flex: 1;
+    background: #1f242d;
+    animation: hide-bars 0.5s ease-in-out forwards;
+    animation-delay: calc(0.1s * var(--i));
+  }
+
+  @keyframes hide-bars {
+    to {
+      transform: translateY(-100%);
+    }
+  }
+
+  /* ================= CONTENIDO DE LAS SECCIONES ================= */
+  section {
+    position: relative;
+    width: 100%;
+    padding: 10rem 9% 4rem; /* Deja espacio para el header fijo */
+  }
+
+  section.services > img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem auto; /* Opcional: centra la imagen y añade un espacio vertical */
+}
+
+
+  /* Título principal */
+  .heading {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #fff;
+  }
+
+  @media (min-width: 768px) {
+    .heading {
+      font-size: 3.5rem;
+    }
+  }
+
+  /* Contenido del blog */
+  .blog-post {
+    max-width: 900px;
+    margin: auto;
+    font-size: 1.6rem;
+    line-height: 1.6;
+  }
+
+  .indice h2 {
+    color: yellow;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  .indice ul {
+    list-style: none;
+  }
+
+  .indice ul li {
+    margin: 0.5rem 0;
+  }
+
+  .indice ul li a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+
+  /* Tarjetas de peligro */
+  .card-peligro {
+    background-color: #1e1e1e;
+    padding: 2rem;
+    margin: 3rem 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    position: relative;
+  }
+
+  .card-peligro img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+
+  .numero-circulo {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+  }
+
+  /* ================= SECCIÓN FINAL (RECOMENDACIÓN) ================= */
+  #recomendacion {
+    background-color: #111;
+    margin-top: 6rem;
+    border-top: 4px solid yellow;
+  }
+
+  .destacado-final {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    color: #fff;
+  }
+
+  .destacado-final h2 {
+    font-size: 2.5rem;
+    color: yellow;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+
+  .destacado-final p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .boton-contacto {
+    background-color: #ffdd00;
+    color: #000;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .boton-contacto:hover {
+    background-color: #ffe94d;
+  }
+
+  /* ================= MEDIA QUERIES RESPONSIVE ================= */
+
+  /* Para pantallas menores a 768px */
+  @media screen and (max-width: 768px) {
+    #menu-icon {
+      display: block;
+    }
+    
+    nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 1rem 0;
+      background: #1f242d;
+      border-top: 0.1rem solid rgba(0,0,0,0.2);
+      box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+      text-align: center;
+      display: none;
+    }
+    
+    nav.active {
+      display: block;
+    }
+    
+    nav a {
+      display: block;
+      margin: 2rem 0;
+    }
+  }
+
+  /* Para pantallas menores a 450px */
+  @media screen and (max-width: 450px) {
+    .heading {
+      font-size: 2rem;
+    }
+    
+    .blog-post {
+      font-size: 1.4rem;
+    }
+    
+    .destacado-final p {
+      font-size: 1.6rem;
+    }
+    
+    .boton-contacto {
+      font-size: 1.6rem;
+    }
+  }
+
+  </style>
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRNKS9CX" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <!-- header -->
-  <header class="active">
+  <!-- ENCABEZADO -->
+  <header>
     <a href="https://muservicios.com/" class="logo">MUS.</a>
-    <i class='bx bx-menu' id="menu-icon"></i>
+    <i class="bx bx-menu" id="menu-icon"></i>
     <nav>
       <a href="https://muservicios.com/">Inicio</a>
-      <a href="../blogs/5-peligros-ocultos-al-contratar-servicios-de-limpieza-en-cali.html" class="active">Blogs</a>
+      <a
+        href="../blogs/5-peligros-ocultos-al-contratar-servicios-de-reparacion-para-el-hogar-en-cali.html"
+        class="active"
+        >Blogs</a
+      >
+      <a href="#recomendacion">Ver recomendación segura</a>
     </nav>
   </header>
 
-  <!-- bars background -->
-  <div class="bars-box active">
+  <!-- BARRAS DE ANIMACIÓN INICIAL -->
+  <div class="bars-box">
     <div class="bar" style="--i:6;"></div>
     <div class="bar" style="--i:5;"></div>
     <div class="bar" style="--i:4;"></div>
@@ -76,90 +331,162 @@
     <div class="bar" style="--i:1;"></div>
   </div>
 
-  <section class="services active" style="text-align: center; padding: 60px 20px; background-color: #1B1B1B;">
-    <!-- Título principal -->
-    <h2 class="heading" style="font-size: 5.25rem; color: #fff; margin-bottom: 30px;">
+  <!-- SECCIÓN PRINCIPAL -->
+  <section class="services">
+    <h1 class="heading">
       <span style="color: yellow;">5 Peligros</span> Ocultos al Contratar
       <span style="color: yellow;">Servicios de Reparación para el hogar</span> en Cali
-    </h2>
+    </h1>
 
-    <!-- Imagen de ejemplo -->
-    <div style="margin-bottom: 40px;">
-      <img src="../images/ladron-entrando-en-casa.jpg" alt="Vista previa del Roadmap"
-        style="max-width: 80%; height: auto; border: 2px solid #ccc; border-radius: 8px;">
-    </div>
+    <img
+          src="../images/inicial.png"
+          alt="Químicos peligrosos en el hogar"
+        />
 
-    <!-- Subtítulo para pedir WhatsApp -->
-    <h2 style="font-size: 3rem; color: #fff; margin-bottom: 30px;">
-      ¿A cuál número de <span style="color: #05A3CE;">Whatsapp</span> te enviamos la información?
-    </h2>
+    <div class="blog-post">
+      <p>
+        Contratar a alguien para arreglar tu hogar podría parecer sencillo, pero
+        en Cali, esta decisión podría poner en juego tu seguridad, tu bolsillo y
+        tu tranquilidad. Estos son los 5 peligros más alarmantes que debes
+        conocer antes de dejar entrar a alguien a tu casa.
+      </p>
 
-    <!-- Formulario para Formspree -->
-    <form action="https://formspree.io/f/mqappkqk" method="POST" style="
-      max-width: 600px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      ">
-
-
-      <!-- Contenedor del prefijo +57 y el input -->
-      <div style="
-          display: inline-flex;
-          align-items: center;
-          background-color: #fff;
-          border-radius: 10px;
-          overflow: hidden;
-          box-shadow: 0 0 5px rgba(0,0,0,0.15);
-          margin: 0 auto;
-          width: 100%;
-          max-width: 600px;
-        ">
-        <!-- Prefijo +57 fijo -->
-        <span style="
-            background-color: #eee;
-            padding: 16px 14px;
-            color: #000;
-            font-weight: 600;
-            font-size: 1.25rem;
-            border-right: 1px solid #ccc;
-          ">
-          +57
-        </span>
-
-        <!-- Input para los 10 dígitos del número -->
-        <input type="tel" name="whatsappNumber" placeholder="3001234567" required pattern="[0-9]{10}"
-          title="Ingresa sólo los 10 dígitos de tu número de celular" style="
-            border: none;
-            outline: none;
-            background-color: #fff;
-            padding: 16px 14px;
-            width: 100%;
-            font-size: 1.25rem;
-          ">
+      <div class="indice">
+        <h2>Índice</h2>
+        <ul>
+          <li>
+            <a href="#estafa">1. Reparaciones fantasmas: te cobran y desaparecen</a>
+          </li>
+          <li>
+            <a href="#robo">2. Robo disfrazado de "servicio técnico"</a>
+          </li>
+          <li>
+            <a href="#accidentes">3. Accidentes sin seguro: tú pagas el precio</a>
+          </li>
+          <li>
+            <a href="#desastre">4. Daños mayores: arreglos que empeoran todo</a>
+          </li>
+          <li>
+            <a href="#salud">5. Riesgos para tu salud y la de tu familia</a>
+          </li>
+        </ul>
       </div>
 
-      <!-- Botón redondeado con texto grande -->
-      <button type="submit" style="
-          background-color: #05A3CE;
-          color: #fff;
-          padding: 18px 40px;
-          font-size: 1.8rem;
-          border: none;
-          border-radius: 50px;
-          cursor: pointer;
-          font-weight: 700;
-          margin: 0 auto;
-        ">
-        ENVIAR
-      </button>
-    </form>
+      <div class="card-peligro" id="estafa">
+        <div class="numero-circulo">1</div>
+        <h2>Reparaciones fantasmas: te cobran y desaparecen</h2>
+        <img src="../images/imagen1.png" alt="Estafa reparaciones Cali" />
+        <br>
+        <p>
+          En Cali, los “técnicos fantasmas” están al acecho. Se presentan bien vestidos, con voz segura y herramientas a la vista. “Necesito el anticipo para los repuestos”, dicen… y luego desaparecen. A don Álvaro, un pensionado de El Guabal, le pasó hace dos semanas: entregó $200.000 creyendo que le arreglarían el calentador para su esposa enferma. Esperó toda la tarde, luego toda la semana… el supuesto técnico nunca volvió. Su número dejó de existir. El golpe no fue solo económico: fue emocional. “No era por el dinero, era por la confianza”, dijo con la voz quebrada. Cada semana, decenas de caleños viven este engaño. Sin contrato, sin datos reales, sin garantía. Solo queda el silencio, la rabia… y el miedo de volver a confiar.
+        </p>
+      </div>
 
+      <div class="card-peligro" id="robo">
+        <div class="numero-circulo">2</div>
+        <h2>Robo disfrazado de "servicio técnico"</h2>
+        <img src="../images/imagen2.png" alt="Robo en casa por falsos técnicos" />
+        <br>
+        <p>
+          Cada vez más ladrones usan un overol en lugar de pasamontañas. Doña Teresa, una madre soltera del barrio El Trébol, contrató a un supuesto técnico para arreglar la nevera. El hombre llegó puntual, con chaleco bordado, herramientas en mano y una sonrisa confiable. Mientras “revisaba el daño”, le pidió un vaso de agua. En segundos aprovechó que ella fue a la cocina… y desapareció con su celular y el portátil de su hijo. Cuando intentó llamarlo, ya la línea no existía. Historias como esta se repiten a diario: delincuentes que se hacen pasar por técnicos, entran a tu hogar con permiso… y salen con tus pertenencias. La confianza mal puesta, en Cali, puede costarte todo.
+        </p>
+      </div>
+
+      <div class="card-peligro" id="accidentes">
+        <div class="numero-circulo">3</div>
+        <h2>Accidentes sin seguro: tú pagas el precio</h2>
+        <img
+          src="../images/imagen3.png"
+          alt="Accidente técnico sin seguro"
+        />
+        <br>
+        <p>
+          Un mal paso puede dejarte con una deuda que no te pertenece. A Luis, vecino de Alfonso López, le pasó hace un mes: contrató a un electricista informal para cambiar un breaker. A los diez minutos de estar en la escalera, el técnico cayó de espaldas y se fracturó la pierna. No tenía EPS, ni ARL, ni contrato. Hoy, Luis enfrenta una demanda por $8 millones por gastos médicos y compensación. “Solo quería arreglar una falla de luz, ahora no duermo del susto”, dice. En Cali, muchos hogares no saben que al dejar entrar a un trabajador sin seguro, también asumen el riesgo legal. El daño no siempre es al enchufe… a veces, el golpe es al bolsillo y a la tranquilidad.
+        </p>
+      </div>
+
+      <div class="card-peligro" id="desastre">
+        <div class="numero-circulo">4</div>
+        <h2>Daños mayores: arreglos que empeoran todo</h2>
+        <img
+          src="../images/imagen4.png"
+          alt="Daño en casa por mala reparación"
+        />
+        <br>
+        <p>
+          Lo contrató para arreglar una gotera y terminó inundando todo el apartamento. A Marcela, vecina de Valle del Lili, el daño menor le costó millones. El supuesto plomero llegó con actitud de experto, pero sin saber lo que hacía. Al intentar “reparar” una simple fuga, reventó una tubería principal. El agua bajó hasta el piso de abajo, dañó techos ajenos y terminó en un lío con la administración. “Quise ahorrar unos pesos y terminé pagando hasta los arreglos del vecino”, cuenta. En Cali, cada día más personas sufren este tipo de tragedias domésticas: contratistas sin experiencia que prometen soluciones y solo dejan caos. A veces, lo barato no solo sale caro… también deja tu casa hecha un desastre.
+        </p>
+      </div>
+
+      <div class="card-peligro" id="salud">
+        <div class="numero-circulo">5</div>
+        <h2>Riesgos para tu salud y la de tu familia</h2>
+        <img
+          src="../images/imagen5.png"
+          alt="Químicos peligrosos en el hogar"
+        />
+        <br>
+        <p>
+          Lo que parecía una simple reparación terminó en urgencias. En el barrio Ciudad Córdoba, la familia de Johana vivió una pesadilla tras contratar a un supuesto técnico para sellar una filtración en el baño. Usó un químico sin etiqueta ni protección y, en cuestión de minutos, el olor se volvió insoportable. Su hijo de 4 años empezó a toser sin parar y terminó con una fuerte intoxicación respiratoria. “No sabíamos qué había aplicado. Ni él mismo lo tenía claro”, cuenta entre lágrimas. En Cali, estos casos van en aumento: productos tóxicos mal usados, vapores peligrosos en espacios cerrados y cero protocolos de bioseguridad. Tu hogar debe ser un lugar seguro… no una amenaza invisible para tu familia.
+        </p>
+      </div>
+
+      <h2 style="margin-top: 40px; color: #fff;">Conclusión</h2>
+      <p>
+        En Cali, contratar un servicio de reparación no es solo una transacción,
+        es una decisión que puede cambiar tu vida para bien o para mal. Protege
+        tu hogar, tu salud y tu dinero exigiendo legalidad, referencias y
+        garantías claras.
+      </p>
+    </div>
   </section>
 
-  <!-- custom js -->
-  <script src="../js/script.js"></script>
-</body>
+  <!-- SECCIÓN FINAL, ABAJO DE TODO -->
+  <section id="recomendacion">
+    <div class="destacado-final">
+      <h2>¡Atención Cali!</h2>
+      <p>
+        Un grupo de expertos en servicios para el hogar ha recorrido toda la
+        ciudad, ha investigado, verificado y validado
+        <strong>cada proveedor disponible</strong>. Después de meses de pruebas
+        reales, ahora han creado una red confiable para ti.
+      </p>
+      <p>
+        <strong>¿Lo mejor?</strong> Te recomiendan al proveedor más seguro,
+        profesional y confiable, totalmente
+        <span style="color: lime;">GRATIS</span>, de acuerdo a lo que necesitas.
+        Sin trámites, sin cobros ocultos. Solo debes hacer clic aquí abajo y
+        contarles qué necesitas. ¡Es como tener un noticiero exclusivo de
+        seguridad para tu hogar!
+      </p>
+      <a
+        class="boton-contacto"
+        href="https://wa.me/573146057327?text=Hola,%20quiero%20una%20recomendaci%C3%B3n%20segura%20para%20un%20servicio%20de%20reparaci%C3%B3n%20en%20mi%20hogar%20en%20Cali."
+        target="_blank"
+      >
+        📲 ¡Recomiéndenme al mejor!
+      </a>
+    </div>
+  </section>
 
+  <!-- SCRIPT OPCIONAL PARA OCULTAR LAS BARRAS TRAS LA ANIMACIÓN -->
+  <script>
+    window.addEventListener("load", () => {
+      // Cuando pase 1.5s, ocultamos las barras
+      setTimeout(() => {
+        document.querySelector(".bars-box").style.display = "none";
+      }, 1500);
+
+      // Mostramos el header
+      document.querySelector("header").classList.add("active");
+    });
+
+    // Menú responsive
+    const menuIcon = document.getElementById("menu-icon");
+    const navMenu = document.querySelector("nav");
+    menuIcon.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+  </script>
+</body>
 </html>
